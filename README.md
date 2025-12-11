@@ -9,7 +9,7 @@ El objetivo es proporcionar un espacio claro, transparente y fácilmente accesib
 
 Las políticas están disponibles públicamente en:
 
-👉 **[https://edulynch.github.io/mitutechapps-policies/](https://edulynch.github.io/mitutechapps-policies/)**
+👉 **[https://mitutechapps.com/](https://mitutechapps.com/)**
 
 Desde este sitio se puede acceder a las páginas específicas de cada aplicación.
 
@@ -40,7 +40,7 @@ Actualmente se encuentran publicadas las siguientes políticas:
 Generador y lector profesional de códigos QR.
 
 📄 Política de privacidad:
-[https://edulynch.github.io/mitutechapps-policies/qrpro/privacy.html](https://edulynch.github.io/mitutechapps-policies/qrpro/privacy.html)
+[https://mitutechapps.com/qrpro/privacy.html](https://mitutechapps.com/qrpro/privacy.html)
 
 ---
 
