@@ -1,197 +1,125 @@
 :root {
-    --primary: #1e88e5;
-    --primary-dark: #1565c0;
-    --bg-main: #f3f5fb;
-    --card-bg: #ffffff;
-    --text-main: #222222;
-    --text-muted: #666666;
-    --border-soft: #e0e4f0;
+  --primary: #1e88e5;
+  --primary-dark: #1565c0;
+  --bg-main: #f3f5fb;
+  --card-bg: #ffffff;
+  --text-main: #222222;
+  --text-muted: #555555;
+  --border-soft: #d0d4e0;
 }
 
+/* RESET Y BASE */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    background: var(--bg-main);
-    color: var(--text-main);
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 
 /* HEADER */
 header {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: #ffffff;
-    text-align: center;
-    padding: 32px 16px 40px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  text-align: center;
+  padding: 32px 16px 40px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 28px;
+  margin: 0;
+  font-size: 30px;
 }
 
 header p {
-    margin: 10px 0 0;
-    font-size: 15px;
-    color: #e3f2fd;
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: #e3f2fd;
 }
 
-/* CONTAINER */
+/* CONTENEDOR */
 .container {
-    max-width: 960px;
-    margin: -20px auto 40px;
-    padding: 0 16px;
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 16px;
 }
 
-/* CARD */
-.app-card {
-    background: var(--card-bg);
-    border-radius: 18px;
-    padding: 24px 22px 26px;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
-    border: 1px solid var(--border-soft);
+/* SECCIONES */
+.policy-section {
+  background: var(--card-bg);
+  padding: 20px 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  margin-bottom: 32px;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-/* HEADER DE LA APP */
-.app-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 18px;
-    align-items: center;
-    margin-bottom: 18px;
+/* TITULOS */
+.section-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--primary-dark);
 }
 
-.app-icon {
-    width: 96px;
-    height: 96px;
-    border-radius: 24px;
-    background: linear-gradient(135deg, #ffca28, #ff7043);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 26px;
-    color: #ffffff;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+/* CARRUSEL ESTILOS */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  margin-top: 12px;
 }
 
-/* TITULO */
-.app-title-block h2 {
-    margin: 0;
-    font-size: 22px;
+.carousel-track {
+  display: flex;
+  transition: transform 0.35s ease-in-out;
 }
 
-.app-subtitle {
-    margin-top: 4px;
-    font-size: 14px;
-    color: var(--text-muted);
+.carousel-slide {
+  min-width: 100%;
+  padding: 0 6px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  object-fit: cover;
 }
 
 /* BOTONES */
-.app-actions {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: none;
+  font-size: 22px;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s ease;
 }
 
-.btn {
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid transparent;
-    transition: transform 0.1s ease, background 0.1s ease;
+.carousel-btn:hover {
+  background: #ffffff;
 }
 
-.btn-primary {
-    background: var(--primary);
-    color: #ffffff;
+.prev-btn {
+  left: 8px;
 }
 
-.btn-outline {
-    background: #ffffff;
-    color: var(--primary-dark);
-    border-color: var(--primary);
-}
-
-.btn-disabled {
-    background: #eceff1;
-    color: #90a4ae;
-    border-color: #cfd8dc;
-    cursor: default;
-}
-
-/* INFO */
-.app-info {
-    border-top: 1px solid var(--border-soft);
-    padding-top: 16px;
-}
-
-.app-row {
-    margin-bottom: 10px;
-}
-
-.app-row strong {
-    display: block;
-    margin-bottom: 2px;
-}
-
-.app-row a {
-    color: var(--primary-dark);
-    text-decoration: none;
-}
-
-.app-row a:hover {
-    text-decoration: underline;
-}
-
-/* TITULOS DE SECCION */
-.section-title {
-    font-weight: 600;
-    margin-bottom: 4px;
-    margin-top: 12px;
-    font-size: 15px;
-}
-
-/* DESCRIPCION */
-.app-description {
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* CAPTURAS */
-.screenshots-wrapper {
-    margin-top: 8px;
-    padding: 10px;
-    border-radius: 12px;
-    background: #f5f7ff;
-    border: 1px dashed #c5cae9;
-}
-
-/* Grid totalmente responsivo */
-.screenshots {
-    margin-top: 6px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-}
-
-.screenshots img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
-    object-fit: cover;
+.next-btn {
+  right: 8px;
 }
 
 /* RESPONSIVE EXTRA */
 @media (max-width: 600px) {
-    .app-header {
-        grid-template-columns: 1fr;
-    }
+  .carousel-btn {
+    font-size: 18px;
+    padding: 4px 10px;
+  }
 }
