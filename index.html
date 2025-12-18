@@ -17,75 +17,71 @@
 
 <main class="container">
 
-  <!-- Políticas (contenido existente, adaptado) -->
-  <section class="policy-section">
-    <h2>Resumen de la Política</h2>
+  <!-- Aquí va el contenido de tu política -->
+  <section>
+    <h2>Política de Privacidad</h2>
     <p>
-      Esta página contiene la política de privacidad para la aplicación QR Pro. Asegúrate
-      de revisarla con atención y adaptarla a tu uso específico.
+      <!-- Tu texto completo aquí -->
+      Esta política describe cómo se recopilan y utilizan los datos dentro de la aplicación QR Pro…
     </p>
-    <!-- … AQUÍ VA TODO EL CONTENIDO DE TU POLÍTICA (texto, tablas, etc.) … -->
+    <!-- resto de tu contenido de políticas -->
   </section>
 
-  <!-- Sección de Capturas con Carrusel -->
-  <section class="screenshots-section">
-    <h2 class="section-title">Capturas de Pantalla</h2>
+  <!-- ============================= -->
+  <!-- Sección de Capturas / Carrusel -->
+  <!-- ============================= -->
 
-    <div class="carousel-container">
+  <section class="screenshots">
+    <h2>Capturas de la App</h2>
 
-      <button class="carousel-btn prev-btn" aria-label="Anterior">&lt;</button>
+    <div class="carousel">
+      <button class="carousel-btn prev" aria-label="Anterior captura">&#10094;</button>
 
       <div class="carousel-track">
-        <!-- Slides de imagenes -->
-        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/1.png" alt="Captura 1"></div>
-        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/2.png" alt="Captura 2"></div>
-        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/3.png" alt="Captura 3"></div>
-        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/4.png" alt="Captura 4"></div>
-        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/5.png" alt="Captura 5"></div>
-        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/6.png" alt="Captura 6"></div>
-        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/7.png" alt="Captura 7"></div>
-        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/8.png" alt="Captura 8"></div>
+        <img src="https://mitutechapps.com/qrpro/screenshots/1.png" alt="Captura 1">
+        <img src="https://mitutechapps.com/qrpro/screenshots/2.png" alt="Captura 2">
+        <img src="https://mitutechapps.com/qrpro/screenshots/3.png" alt="Captura 3">
+        <img src="https://mitutechapps.com/qrpro/screenshots/4.png" alt="Captura 4">
+        <img src="https://mitutechapps.com/qrpro/screenshots/5.png" alt="Captura 5">
+        <img src="https://mitutechapps.com/qrpro/screenshots/6.png" alt="Captura 6">
+        <img src="https://mitutechapps.com/qrpro/screenshots/7.png" alt="Captura 7">
+        <img src="https://mitutechapps.com/qrpro/screenshots/8.png" alt="Captura 8">
       </div>
 
-      <button class="carousel-btn next-btn" aria-label="Siguiente">&gt;</button>
-
+      <button class="carousel-btn next" aria-label="Siguiente captura">&#10095;</button>
     </div>
   </section>
 
 </main>
 
-<!-- JS mínimo para carrusel -->
+<!-- Script mínimo para carrusel -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".carousel-track");
-  const slides = Array.from(track.children);
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    const nextButton = document.querySelector('.carousel-btn.next');
 
-  const slideWidth = slides[0].getBoundingClientRect().width;
+    let currentIndex = 0;
 
-  // Alinea slides en fila
-  slides.forEach((slide, index) => {
-    slide.style.left = slideWidth * index + "px";
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentIndex < slides.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
   });
-
-  let currentIndex = 0;
-
-  const moveToSlide = (index) => {
-    track.style.transform = "translateX(-" + slideWidth * index + "px)";
-    currentIndex = index;
-  };
-
-  prevBtn.addEventListener("click", () => {
-    const nextIndex = currentIndex > 0 ? currentIndex - 1 : 0;
-    moveToSlide(nextIndex);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    const nextIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : slides.length - 1;
-    moveToSlide(nextIndex);
-  });
-});
 </script>
 
 </body>
