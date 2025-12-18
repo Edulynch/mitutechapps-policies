@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mis Apps | MituTech Apps</title>
 
+    <!-- Enlace al CSS externo -->
     <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
 
-<!-- ========================= -->
-<!-- SIDEBAR / ÍNDICE FLOTANTE -->
-<!-- ========================= -->
-<nav class="app-index" aria-label="Índice de aplicaciones">
-    <a href="#qr-pro" class="app-index-item" title="QR Pro">
-        <img src="https://mitutechapps.com/qrpro/logo/logo.png" alt="QR Pro logo">
-    </a>
-
-    <a href="#zen-sudoku" class="app-index-item" title="Zen Sudoku">
-        <span class="index-placeholder">🧩</span>
-    </a>
-</nav>
+<!-- Menú flotante -->
+<aside class="floating-menu">
+    <div class="menu-header">
+        <h3>Applications</h3>
+    </div>
+    <nav class="menu-nav">
+        <a href="#qr-pro" class="menu-item">
+            <img src="https://mitutechapps.com/qrpro/logo/logo.png" alt="QR Pro">
+            <span class="menu-tooltip">QR Pro</span>
+        </a>
+        <a href="#zen-sudoku" class="menu-item">
+            <span class="menu-emoji">🧩</span>
+            <span class="menu-tooltip">Zen Sudoku</span>
+        </a>
+    </nav>
+</aside>
 
 <!-- Header principal -->
 <header>
@@ -29,6 +34,7 @@
     <p>Apps desarrolladas con cariño, calidad y buen café ☕💙</p>
 </header>
 
+<!-- Contenedor central -->
 <div class="container">
 
     <!-- ================= -->
@@ -36,6 +42,7 @@
     <!-- ================= -->
     <section id="qr-pro" class="app-card" aria-label="Información de la app QR Pro">
 
+        <!-- Zona superior -->
         <div class="app-header">
             <div class="app-icon">
                 <img src="https://mitutechapps.com/qrpro/logo/logo.png" alt="QR Pro logo">
@@ -43,13 +50,12 @@
 
             <div class="app-title-block">
                 <h2>QR Pro</h2>
-                <div class="app-subtitle">
-                    Genera y escanea códigos QR con calidad profesional 📱✨
-                </div>
+                <div class="app-subtitle">Genera y escanea códigos QR con calidad profesional 📱✨</div>
 
+                <!-- Botones -->
                 <div class="app-actions">
-                    <a class="btn btn-disabled">Play Store (WIP)</a>
-                    <a class="btn btn-disabled">App Store (WIP)</a>
+                    <a class="btn btn-disabled" href="javascript:void(0)">Play Store (WIP)</a>
+                    <a class="btn btn-disabled" href="javascript:void(0)">App Store (WIP)</a>
 
                     <a class="btn btn-outline"
                        href="https://mitutechapps.com/qrpro/privacy.html"
@@ -60,40 +66,94 @@
             </div>
         </div>
 
+        <!-- Información -->
         <div class="app-info">
 
+            <div class="app-row">
+                <strong>Nombre de la App:</strong>
+                <span>QR Pro</span>
+            </div>
+
+            <div class="app-row">
+                <strong>URL Play Store:</strong>
+                <span>WIP</span>
+            </div>
+
+            <div class="app-row">
+                <strong>URL App Store:</strong>
+                <span>WIP</span>
+            </div>
+
+            <div class="app-row">
+                <strong>Política de Privacidad:</strong>
+                <a href="https://mitutechapps.com/qrpro/privacy.html"
+                   target="_blank" rel="noopener noreferrer">
+                    https://mitutechapps.com/qrpro/privacy.html
+                </a>
+            </div>
+
+            <div class="app-row">
+                <strong>Términos de Uso:</strong>
+                <a href="https://mitutechapps.com/qrpro/terms.html"
+                   target="_blank" rel="noopener noreferrer">
+                    https://mitutechapps.com/qrpro/terms.html
+                </a>
+            </div>
+
+            <!-- Descripción -->
             <div class="app-row">
                 <div class="section-title">Descripción:</div>
                 <p class="app-description">
                     QR Pro es una herramienta poderosa para generar y escanear códigos QR con precisión.
-                    Soporta múltiples formatos y ofrece historial, privacidad reforzada y diseño profesional.
+                    Soporta múltiples formatos (Texto, URL, WiFi, Contacto, JSON, Email, Teléfono y más).
+                    Ofrece historial, diseño profesional, privacidad reforzada y un flujo rápido para uso diario.
                 </p>
             </div>
 
+            <!-- Capturas (CARRUSEL 3–4 visibles) -->
             <div class="app-row">
                 <div class="section-title">Capturas:</div>
 
                 <div class="screenshots-wrapper">
-                    <div class="carousel">
-                        <button class="carousel-btn prev">&#10094;</button>
+                    <div class="carousel" data-carousel>
+                        <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
 
-                        <div class="carousel-track">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/1.png">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/2.png">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/3.png">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/4.png">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/5.png">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/6.png">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/7.png">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/8.png">
+                        <div class="carousel-viewport">
+                            <div class="carousel-track">
+                                <div class="carousel-item">
+                                    <img src="https://mitutechapps.com/qrpro/screenshots/1.png" alt="Captura 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://mitutechapps.com/qrpro/screenshots/2.png" alt="Captura 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://mitutechapps.com/qrpro/screenshots/3.png" alt="Captura 3">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://mitutechapps.com/qrpro/screenshots/4.png" alt="Captura 4">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://mitutechapps.com/qrpro/screenshots/5.png" alt="Captura 5">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://mitutechapps.com/qrpro/screenshots/6.png" alt="Captura 6">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://mitutechapps.com/qrpro/screenshots/7.png" alt="Captura 7">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://mitutechapps.com/qrpro/screenshots/8.png" alt="Captura 8">
+                                </div>
+                            </div>
                         </div>
 
-                        <button class="carousel-btn next">&#10095;</button>
+                        <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
                     </div>
                 </div>
             </div>
 
         </div>
+
     </section>
 
     <!-- ================= -->
@@ -101,61 +161,211 @@
     <!-- ================= -->
     <section id="zen-sudoku" class="app-card" aria-label="Información de la app Zen Sudoku">
 
+        <!-- Zona superior -->
         <div class="app-header">
-            <div class="app-icon zen-icon">🧩</div>
+            <div class="app-icon">🧩</div>
 
             <div class="app-title-block">
                 <h2>Zen Sudoku</h2>
-                <div class="app-subtitle">
-                    Sudoku minimalista y relajante 🧘‍♂️
-                </div>
+                <div class="app-subtitle">Sudoku relajante, limpio y sin distracciones 🧘‍♂️</div>
 
+                <!-- Botones -->
                 <div class="app-actions">
-                    <a class="btn btn-disabled">Play Store (WIP)</a>
-                    <a class="btn btn-disabled">App Store (WIP)</a>
+                    <a class="btn btn-disabled" href="javascript:void(0)">Play Store (WIP)</a>
+                    <a class="btn btn-disabled" href="javascript:void(0)">App Store (WIP)</a>
+                    <a class="btn btn-disabled" href="javascript:void(0)">Política de privacidad (WIP)</a>
                 </div>
             </div>
         </div>
 
+        <!-- Información -->
         <div class="app-info">
+
+            <div class="app-row">
+                <strong>Nombre de la App:</strong>
+                <span>Zen Sudoku</span>
+            </div>
+
+            <div class="app-row">
+                <strong>URL Play Store:</strong>
+                <span>WIP</span>
+            </div>
+
+            <div class="app-row">
+                <strong>URL App Store:</strong>
+                <span>WIP</span>
+            </div>
+
+            <div class="app-row">
+                <strong>Política de Privacidad:</strong>
+                <span>WIP</span>
+            </div>
+
+            <div class="app-row">
+                <strong>Términos de Uso:</strong>
+                <span>WIP</span>
+            </div>
+
+            <!-- Descripción -->
             <div class="app-row">
                 <div class="section-title">Descripción:</div>
                 <p class="app-description">
-                    Zen Sudoku ofrece una experiencia de sudoku limpia y calmada,
-                    enfocada en la concentración, el diseño sin distracciones
-                    y el disfrute diario.
+                    Zen Sudoku ofrece una experiencia de sudoku minimalista enfocada en la calma,
+                    la concentración y el disfrute diario. Sin ruido visual ni distracciones, solo puzzles bien diseñados.
                 </p>
             </div>
+
+            <!-- Capturas (placeholders en carrusel 3–4 visibles) -->
+            <div class="app-row">
+                <div class="section-title">Capturas:</div>
+
+                <div class="screenshots-wrapper">
+                    <div class="carousel" data-carousel>
+                        <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+
+                        <div class="carousel-viewport">
+                            <div class="carousel-track">
+                                <div class="carousel-item"><div class="shot-card">#1</div></div>
+                                <div class="carousel-item"><div class="shot-card">#2</div></div>
+                                <div class="carousel-item"><div class="shot-card">#3</div></div>
+                                <div class="carousel-item"><div class="shot-card">#4</div></div>
+                                <div class="carousel-item"><div class="shot-card">#5</div></div>
+                                <div class="carousel-item"><div class="shot-card">#6</div></div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
     </section>
 
 </div>
 
-<!-- ================= -->
-<!-- JS PARA CARRUSELES -->
-<!-- ================= -->
+<!-- JS: carrusel multi-item (3–4 visibles) -->
 <script>
-    document.querySelectorAll('.carousel').forEach(carousel => {
-        const track = carousel.querySelector('.carousel-track');
-        const slides = track.children;
-        const prev = carousel.querySelector('.prev');
-        const next = carousel.querySelector('.next');
+(function () {
+    function setupCarousel(root) {
+        const track = root.querySelector('.carousel-track');
+        const viewport = root.querySelector('.carousel-viewport');
+        const prevBtn = root.querySelector('.carousel-btn.prev');
+        const nextBtn = root.querySelector('.carousel-btn.next');
+
+        if (!track || !viewport || !prevBtn || !nextBtn) return;
+
         let index = 0;
 
-        function update() {
-            track.style.transform = `translateX(-${index * 100}%)`;
+        function getGapPx() {
+            const cs = window.getComputedStyle(track);
+            const gap = cs.gap || cs.columnGap || '0px';
+            const n = parseFloat(gap);
+            return Number.isFinite(n) ? n : 0;
         }
 
-        prev.addEventListener('click', () => {
-            if (index > 0) index--;
-            update();
+        function getStep() {
+            const first = track.querySelector('.carousel-item');
+            if (!first) return 0;
+            const gap = getGapPx();
+            const w = first.getBoundingClientRect().width;
+            return w + gap;
+        }
+
+        function getVisibleCount() {
+            const step = getStep();
+            if (!step) return 1;
+            const gap = getGapPx();
+            return Math.max(1, Math.floor((viewport.clientWidth + gap) / step));
+        }
+
+        function maxIndex() {
+            const items = track.querySelectorAll('.carousel-item').length;
+            const visible = getVisibleCount();
+            return Math.max(0, items - visible);
+        }
+
+        function updateButtons() {
+            prevBtn.disabled = index <= 0;
+            nextBtn.disabled = index >= maxIndex();
+            prevBtn.classList.toggle('is-disabled', prevBtn.disabled);
+            nextBtn.classList.toggle('is-disabled', nextBtn.disabled);
+        }
+
+        function render() {
+            const step = getStep();
+            const max = maxIndex();
+            index = Math.min(Math.max(index, 0), max);
+            track.style.transform = `translateX(-${index * step}px)`;
+            updateButtons();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            index -= 1;
+            render();
         });
 
-        next.addEventListener('click', () => {
-            if (index < slides.length - 1) index++;
-            update();
+        nextBtn.addEventListener('click', () => {
+            index += 1;
+            render();
+        });
+
+        window.addEventListener('resize', render);
+
+        render();
+    }
+
+    document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
+})();
+</script>
+
+<!-- JS: smooth scroll para el menú flotante -->
+<script>
+(function() {
+    // Smooth scroll al hacer clic en los items del menú
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
+
+    // Resaltar el item activo según el scroll
+    function updateActiveMenuItem() {
+        const sections = document.querySelectorAll('.app-card[id]');
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        let currentSection = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+        
+        menuItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${currentSection}`) {
+                item.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveMenuItem);
+    updateActiveMenuItem();
+})();
 </script>
 
 </body>
