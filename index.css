@@ -52,6 +52,7 @@ header p {
     padding: 24px 22px 26px;
     box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
     border: 1px solid var(--border-soft);
+    margin-bottom: 32px; /* soporte multi-app */
 }
 
 /* HEADER DE LA APP */
@@ -104,12 +105,6 @@ header p {
     font-weight: 600;
     text-decoration: none;
     border: 1px solid transparent;
-    transition: transform 0.1s ease, background 0.1s ease;
-}
-
-.btn-primary {
-    background: var(--primary);
-    color: #ffffff;
 }
 
 .btn-outline {
@@ -122,7 +117,6 @@ header p {
     background: #eceff1;
     color: #90a4ae;
     border-color: #cfd8dc;
-    cursor: default;
 }
 
 /* INFO */
@@ -133,20 +127,6 @@ header p {
 
 .app-row {
     margin-bottom: 10px;
-}
-
-.app-row strong {
-    display: block;
-    margin-bottom: 2px;
-}
-
-.app-row a {
-    color: var(--primary-dark);
-    text-decoration: none;
-}
-
-.app-row a:hover {
-    text-decoration: underline;
 }
 
 /* TITULOS DE SECCION */
@@ -163,23 +143,23 @@ header p {
     line-height: 1.6;
 }
 
-/* CAPTURAS - WRAPPER ORIGINAL */
+/* ========================= */
+/* CAPTURAS - CARRUSEL */
+/* ========================= */
+
 .screenshots-wrapper {
     margin-top: 8px;
-    padding: 10px;
+    padding: 14px;
     border-radius: 12px;
     background: #f5f7ff;
     border: 1px dashed #c5cae9;
 }
 
-/* ========================= */
-/* CARRUSEL DE CAPTURAS */
-/* ========================= */
-
 .carousel {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .carousel-track {
@@ -188,15 +168,15 @@ header p {
 }
 
 .carousel-track img {
-    min-width: 100%;
-    max-width: 100%;
+    width: 100%;
+    max-width: 260px;   /* TAMAÑO DECENTE */
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
-    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
 
-/* Botones de navegación */
+/* Botones */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -218,13 +198,13 @@ header p {
     right: 6px;
 }
 
-.carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.65);
-}
-
-/* RESPONSIVE EXTRA */
+/* RESPONSIVE */
 @media (max-width: 600px) {
     .app-header {
         grid-template-columns: 1fr;
+    }
+
+    .carousel-track img {
+        max-width: 220px;
     }
 }
