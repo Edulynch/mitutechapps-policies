@@ -20,10 +20,11 @@
 <!-- Contenedor central -->
 <div class="container">
 
-    <!-- Tarjeta de QR Pro -->
+    <!-- ===================== -->
+    <!-- APP: QR PRO -->
+    <!-- ===================== -->
     <section class="app-card" aria-label="Información de la app QR Pro">
 
-        <!-- Zona superior -->
         <div class="app-header">
             <div class="app-icon">QR</div>
 
@@ -33,7 +34,6 @@
                     Genera y escanea códigos QR con calidad profesional 📱✨
                 </div>
 
-                <!-- Botones -->
                 <div class="app-actions">
                     <a class="btn btn-disabled" href="javascript:void(0)">Play Store (WIP)</a>
                     <a class="btn btn-disabled" href="javascript:void(0)">App Store (WIP)</a>
@@ -47,7 +47,6 @@
             </div>
         </div>
 
-        <!-- Información -->
         <div class="app-info">
 
             <div class="app-row">
@@ -81,7 +80,6 @@
                 </a>
             </div>
 
-            <!-- Descripción -->
             <div class="app-row">
                 <div class="section-title">Descripción:</div>
                 <p class="app-description">
@@ -91,65 +89,117 @@
                 </p>
             </div>
 
-            <!-- ===================== -->
-            <!-- CAPTURAS (CARRUSEL) -->
-            <!-- ===================== -->
+            <!-- Capturas QR Pro -->
             <div class="app-row">
                 <div class="section-title">Capturas:</div>
 
                 <div class="screenshots-wrapper">
-
-                    <div class="carousel">
-                        <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+                    <div class="carousel" data-carousel>
+                        <button class="carousel-btn prev" data-prev>&#10094;</button>
 
                         <div class="carousel-track">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/1.png" alt="Captura 1">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/2.png" alt="Captura 2">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/3.png" alt="Captura 3">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/4.png" alt="Captura 4">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/5.png" alt="Captura 5">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/6.png" alt="Captura 6">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/7.png" alt="Captura 7">
-                            <img src="https://mitutechapps.com/qrpro/screenshots/8.png" alt="Captura 8">
+                            <img src="https://mitutechapps.com/qrpro/screenshots/1.png" alt="QR Pro captura 1">
+                            <img src="https://mitutechapps.com/qrpro/screenshots/2.png" alt="QR Pro captura 2">
+                            <img src="https://mitutechapps.com/qrpro/screenshots/3.png" alt="QR Pro captura 3">
+                            <img src="https://mitutechapps.com/qrpro/screenshots/4.png" alt="QR Pro captura 4">
+                            <img src="https://mitutechapps.com/qrpro/screenshots/5.png" alt="QR Pro captura 5">
+                            <img src="https://mitutechapps.com/qrpro/screenshots/6.png" alt="QR Pro captura 6">
+                            <img src="https://mitutechapps.com/qrpro/screenshots/7.png" alt="QR Pro captura 7">
+                            <img src="https://mitutechapps.com/qrpro/screenshots/8.png" alt="QR Pro captura 8">
                         </div>
 
-                        <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+                        <button class="carousel-btn next" data-next>&#10095;</button>
                     </div>
-
                 </div>
             </div>
 
         </div>
+    </section>
 
+    <!-- ===================== -->
+    <!-- APP: ZEN SUDOKU -->
+    <!-- ===================== -->
+    <section class="app-card" aria-label="Información de la app Zen Sudoku">
+
+        <div class="app-header">
+            <div class="app-icon">🧩</div>
+
+            <div class="app-title-block">
+                <h2>Zen Sudoku</h2>
+                <div class="app-subtitle">
+                    Sudoku relajante, limpio y sin distracciones 🧘‍♂️
+                </div>
+
+                <div class="app-actions">
+                    <a class="btn btn-disabled" href="javascript:void(0)">Play Store (WIP)</a>
+                    <a class="btn btn-disabled" href="javascript:void(0)">App Store (WIP)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-info">
+
+            <div class="app-row">
+                <div class="section-title">Descripción:</div>
+                <p class="app-description">
+                    Zen Sudoku ofrece una experiencia de sudoku minimalista y calmada,
+                    diseñada para enfocarse, relajarse y disfrutar el juego sin presión.
+                </p>
+            </div>
+
+            <!-- Capturas Zen Sudoku -->
+            <div class="app-row">
+                <div class="section-title">Capturas:</div>
+
+                <div class="screenshots-wrapper">
+                    <div class="carousel" data-carousel>
+                        <button class="carousel-btn prev" data-prev>&#10094;</button>
+
+                        <div class="carousel-track">
+                            <!-- placeholders hasta tener screenshots reales -->
+                            <img src="https://placehold.co/1080x1920/2e7d32/ffffff?text=Zen+Sudoku+1" alt="Zen Sudoku captura 1">
+                            <img src="https://placehold.co/1080x1920/388e3c/ffffff?text=Zen+Sudoku+2" alt="Zen Sudoku captura 2">
+                        </div>
+
+                        <button class="carousel-btn next" data-next>&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
 </div>
 
-<!-- JS mínimo del carrusel -->
+<!-- ===================== -->
+<!-- JS CARRUSEL GENÉRICO -->
+<!-- ===================== -->
 <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = track.children;
-    const prev = document.querySelector('.carousel-btn.prev');
-    const next = document.querySelector('.carousel-btn.next');
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const slides = track.children;
+        const prev = carousel.querySelector('[data-prev]');
+        const next = carousel.querySelector('[data-next]');
 
-    let index = 0;
+        let index = 0;
 
-    function updateCarousel() {
-        track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    prev.addEventListener('click', () => {
-        if (index > 0) {
-            index--;
-            updateCarousel();
+        function update() {
+            track.style.transform = `translateX(-${index * 100}%)`;
         }
-    });
 
-    next.addEventListener('click', () => {
-        if (index < slides.length - 1) {
-            index++;
-            updateCarousel();
-        }
+        prev.addEventListener('click', () => {
+            if (index > 0) {
+                index--;
+                update();
+            }
+        });
+
+        next.addEventListener('click', () => {
+            if (index < slides.length - 1) {
+                index++;
+                update();
+            }
+        });
     });
 </script>
 
