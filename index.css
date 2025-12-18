@@ -8,6 +8,17 @@
     --border-soft: #e0e4f0;
 }
 
+/* Tema oscuro */
+[data-theme="dark"] {
+    --primary: #42a5f5;
+    --primary-dark: #1e88e5;
+    --bg-main: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border-soft: #334155;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -17,6 +28,7 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     background: var(--bg-main);
     color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ========================= */
@@ -35,6 +47,7 @@ body {
     z-index: 1000;
     min-width: 80px;
     backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .menu-header {
@@ -42,6 +55,7 @@ body {
     margin-bottom: 16px;
     padding-bottom: 12px;
     border-bottom: 2px solid var(--border-soft);
+    transition: border-color 0.3s ease;
 }
 
 .menu-header h3 {
@@ -51,6 +65,7 @@ body {
     color: var(--primary-dark);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    transition: color 0.3s ease;
 }
 
 .menu-nav {
@@ -73,6 +88,10 @@ body {
     cursor: pointer;
     border: 2px solid transparent;
     overflow: visible;
+}
+
+[data-theme="dark"] .menu-item {
+    background: linear-gradient(135deg, #2d3748, #1a202c);
 }
 
 .menu-item:hover {
@@ -132,10 +151,72 @@ body {
     pointer-events: none;
 }
 
+[data-theme="dark"] .menu-tooltip {
+    background: rgba(15, 23, 42, 0.95);
+}
+
 .menu-item:hover .menu-tooltip {
     opacity: 1;
     visibility: visible;
     transform: translateY(-50%) translateX(0) scale(1);
+}
+
+/* Divisor del menú */
+.menu-divider {
+    height: 2px;
+    background: var(--border-soft);
+    margin: 16px 0;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+/* Switch de tema */
+.theme-switch-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.theme-switch {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f8f9fc, #e8ecf5);
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+[data-theme="dark"] .theme-switch {
+    background: linear-gradient(135deg, #2d3748, #1a202c);
+}
+
+.theme-switch:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    box-shadow: 0 6px 16px rgba(30, 136, 229, 0.3);
+    border-color: var(--primary);
+}
+
+.theme-icon {
+    position: absolute;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.sun-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.moon-icon {
+    opacity: 0;
+    transform: scale(0.5);
 }
 
 /* Responsive: ocultar menú en pantallas pequeñas */
@@ -151,6 +232,7 @@ header {
     color: #ffffff;
     text-align: center;
     padding: 32px 16px 40px;
+    transition: background 0.3s ease;
 }
 
 header h1 {
@@ -180,6 +262,11 @@ header p {
     border: 1px solid var(--border-soft);
     margin-bottom: 32px;
     scroll-margin-top: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .app-card {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* HEADER DE LA APP */
@@ -218,12 +305,15 @@ header p {
 .app-title-block h2 {
     margin: 0;
     font-size: 22px;
+    color: var(--text-main);
+    transition: color 0.3s ease;
 }
 
 .app-subtitle {
     margin-top: 4px;
     font-size: 14px;
     color: var(--text-muted);
+    transition: color 0.3s ease;
 }
 
 /* BOTONES */
@@ -250,9 +340,10 @@ header p {
 }
 
 .btn-outline {
-    background: #ffffff;
+    background: var(--card-bg);
     color: var(--primary-dark);
     border-color: var(--primary);
+    transition: all 0.3s ease;
 }
 
 .btn-disabled {
@@ -262,10 +353,17 @@ header p {
     cursor: default;
 }
 
+[data-theme="dark"] .btn-disabled {
+    background: #334155;
+    color: #64748b;
+    border-color: #475569;
+}
+
 /* INFO */
 .app-info {
     border-top: 1px solid var(--border-soft);
     padding-top: 16px;
+    transition: border-color 0.3s ease;
 }
 
 .app-row {
@@ -275,11 +373,19 @@ header p {
 .app-row strong {
     display: block;
     margin-bottom: 2px;
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+.app-row span {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
 }
 
 .app-row a {
     color: var(--primary-dark);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .app-row a:hover {
@@ -292,12 +398,16 @@ header p {
     margin-bottom: 4px;
     margin-top: 12px;
     font-size: 15px;
+    color: var(--text-main);
+    transition: color 0.3s ease;
 }
 
 /* DESCRIPCION */
 .app-description {
     font-size: 14px;
     line-height: 1.6;
+    color: var(--text-main);
+    transition: color 0.3s ease;
 }
 
 /* CAPTURAS WRAPPER */
@@ -307,6 +417,12 @@ header p {
     border-radius: 12px;
     background: #f5f7ff;
     border: 1px dashed #c5cae9;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .screenshots-wrapper {
+    background: #1a2332;
+    border-color: #334155;
 }
 
 /* ===================== */
@@ -376,6 +492,7 @@ header p {
     font-size: 18px;
     z-index: 5;
     border-radius: 10px;
+    transition: background 0.3s ease;
 }
 
 .carousel-btn.prev { left: 6px; }
@@ -405,6 +522,13 @@ header p {
     font-weight: 800;
     color: #8a90c8;
     font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .shot-card {
+    background: #1e293b;
+    border-color: #334155;
+    color: #64748b;
 }
 
 /* RESPONSIVE EXTRA */

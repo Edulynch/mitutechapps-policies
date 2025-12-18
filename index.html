@@ -14,7 +14,7 @@
 <!-- Menú flotante -->
 <aside class="floating-menu">
     <div class="menu-header">
-        <h3>Applications</h3>
+        <h3>Apps</h3>
     </div>
     <nav class="menu-nav">
         <a href="#qr-pro" class="menu-item">
@@ -26,6 +26,17 @@
             <span class="menu-tooltip">Zen Sudoku</span>
         </a>
     </nav>
+
+    <!-- Divisor -->
+    <div class="menu-divider"></div>
+
+    <!-- Switch de tema -->
+    <div class="theme-switch-wrapper">
+        <button class="theme-switch" id="themeToggle" aria-label="Cambiar tema">
+            <span class="theme-icon sun-icon">☀️</span>
+            <span class="theme-icon moon-icon">🌙</span>
+        </button>
+    </div>
 </aside>
 
 <!-- Header principal -->
@@ -244,6 +255,71 @@
     </section>
 
 </div>
+
+<!-- JS: Gestión de temas -->
+<script>
+(function() {
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    
+    // Detectar preferencia del sistema
+    function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    
+    // Obtener tema guardado o usar el del sistema
+    function getSavedTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        return savedTheme || getSystemTheme();
+    }
+    
+    // Aplicar tema
+    function applyTheme(theme) {
+        htmlElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        updateThemeIcon(theme);
+    }
+    
+    // Actualizar icono del botón
+    function updateThemeIcon(theme) {
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        
+        if (theme === 'dark') {
+            sunIcon.style.opacity = '0';
+            sunIcon.style.transform = 'scale(0.5)';
+            moonIcon.style.opacity = '1';
+            moonIcon.style.transform = 'scale(1)';
+        } else {
+            sunIcon.style.opacity = '1';
+            sunIcon.style.transform = 'scale(1)';
+            moonIcon.style.opacity = '0';
+            moonIcon.style.transform = 'scale(0.5)';
+        }
+    }
+    
+    // Toggle tema
+    function toggleTheme() {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+    }
+    
+    // Event listener
+    themeToggle.addEventListener('click', toggleTheme);
+    
+    // Detectar cambios en la preferencia del sistema
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        // Solo actualizar si el usuario no ha seleccionado manualmente un tema
+        if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+    
+    // Aplicar tema inicial
+    applyTheme(getSavedTheme());
+})();
+</script>
 
 <!-- JS: carrusel multi-item (3–4 visibles) -->
 <script>
