@@ -1,112 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mis Apps | MituTech Apps</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Política de Privacidad — QR Pro</title>
 
-    <!-- Enlace al CSS externo -->
-    <link rel="stylesheet" href="index.css" />
+  <!-- Estilos -->
+  <link rel="stylesheet" href="index.css" />
 </head>
-
 <body>
 
-<!-- Header principal -->
 <header>
-    <h1>Mis Aplicaciones</h1>
-    <p>Apps desarrolladas con cariño, calidad y buen café ☕💙</p>
+  <h1>QR Pro</h1>
+  <p>Política de Privacidad y Capturas de la App</p>
 </header>
 
-<!-- Contenedor central -->
-<div class="container">
+<main class="container">
 
-    <!-- Tarjeta de QR Pro -->
-    <section class="app-card" aria-label="Información de la app QR Pro">
+  <!-- Políticas (contenido existente, adaptado) -->
+  <section class="policy-section">
+    <h2>Resumen de la Política</h2>
+    <p>
+      Esta página contiene la política de privacidad para la aplicación QR Pro. Asegúrate
+      de revisarla con atención y adaptarla a tu uso específico.
+    </p>
+    <!-- … AQUÍ VA TODO EL CONTENIDO DE TU POLÍTICA (texto, tablas, etc.) … -->
+  </section>
 
-        <!-- Zona superior -->
-        <div class="app-header">
-            <div class="app-icon">QR</div>
+  <!-- Sección de Capturas con Carrusel -->
+  <section class="screenshots-section">
+    <h2 class="section-title">Capturas de Pantalla</h2>
 
-            <div class="app-title-block">
-                <h2>QR Pro</h2>
-                <div class="app-subtitle">Genera y escanea códigos QR con calidad profesional 📱✨</div>
+    <div class="carousel-container">
 
-                <!-- Botones -->
-                <div class="app-actions">
-                    <a class="btn btn-disabled" href="javascript:void(0)">Play Store (WIP)</a>
-                    <a class="btn btn-disabled" href="javascript:void(0)">App Store (WIP)</a>
+      <button class="carousel-btn prev-btn" aria-label="Anterior">&lt;</button>
 
-                    <a class="btn btn-outline"
-                       href="https://mitutechapps.com/qrpro/privacy.html"
-                       target="_blank" rel="noopener noreferrer">
-                        Política de privacidad
-                    </a>
-                </div>
-            </div>
-        </div>
+      <div class="carousel-track">
+        <!-- Slides de imagenes -->
+        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/1.png" alt="Captura 1"></div>
+        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/2.png" alt="Captura 2"></div>
+        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/3.png" alt="Captura 3"></div>
+        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/4.png" alt="Captura 4"></div>
+        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/5.png" alt="Captura 5"></div>
+        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/6.png" alt="Captura 6"></div>
+        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/7.png" alt="Captura 7"></div>
+        <div class="carousel-slide"><img src="https://mitutechapps.com/qrpro/screenshots/8.png" alt="Captura 8"></div>
+      </div>
 
-        <!-- Información -->
-        <div class="app-info">
+      <button class="carousel-btn next-btn" aria-label="Siguiente">&gt;</button>
 
-            <div class="app-row">
-                <strong>Nombre de la App:</strong>
-                <span>QR Pro</span>
-            </div>
+    </div>
+  </section>
 
-            <div class="app-row">
-                <strong>URL Play Store:</strong>
-                <span>WIP</span>
-            </div>
+</main>
 
-            <div class="app-row">
-                <strong>URL App Store:</strong>
-                <span>WIP</span>
-            </div>
+<!-- JS mínimo para carrusel -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track");
+  const slides = Array.from(track.children);
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
 
-            <div class="app-row">
-                <strong>Política de Privacidad:</strong>
-                <a href="https://mitutechapps.com/qrpro/privacy.html"
-                   target="_blank" rel="noopener noreferrer">
-                    https://mitutechapps.com/qrpro/privacy.html
-                </a>
-            </div>
+  const slideWidth = slides[0].getBoundingClientRect().width;
 
-            <div class="app-row">
-                <strong>Términos de Uso:</strong>
-                <a href="https://mitutechapps.com/qrpro/privacy.html"
-                   target="_blank" rel="noopener noreferrer">
-                    https://mitutechapps.com/qrpro/terms.html
-                </a>
-            </div>
+  // Alinea slides en fila
+  slides.forEach((slide, index) => {
+    slide.style.left = slideWidth * index + "px";
+  });
 
-            <!-- Descripción -->
-            <div class="app-row">
-                <div class="section-title">Descripción:</div>
-                <p class="app-description">
-                    QR Pro es una herramienta poderosa para generar y escanear códigos QR con precisión.
-                    Soporta múltiples formatos (Texto, URL, WiFi, Contacto, JSON, Email, Teléfono y más).
-                    Ofrece historial, diseño profesional, privacidad reforzada y un flujo rápido para uso diario.
-                </p>
-            </div>
+  let currentIndex = 0;
 
-            <!-- Capturas -->
-            <div class="app-row">
-                <div class="section-title">Capturas:</div>
+  const moveToSlide = (index) => {
+    track.style.transform = "translateX(-" + slideWidth * index + "px)";
+    currentIndex = index;
+  };
 
-                <div class="screenshots-wrapper">
-                    <div class="screenshots">
-                        <img src="https://placehold.co/400x700/1e88e5/ffffff?text=QR+Pro+1" alt="Captura 1">
-                        <img src="https://placehold.co/400x700/1565c0/ffffff?text=QR+Pro+2" alt="Captura 2">
-                        <img src="https://placehold.co/400x700/0d47a1/ffffff?text=QR+Pro+3" alt="Captura 3">
-                    </div>
-                </div>
-            </div>
+  prevBtn.addEventListener("click", () => {
+    const nextIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+    moveToSlide(nextIndex);
+  });
 
-        </div>
-
-    </section>
-
-</div>
+  nextBtn.addEventListener("click", () => {
+    const nextIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : slides.length - 1;
+    moveToSlide(nextIndex);
+  });
+});
+</script>
 
 </body>
 </html>
