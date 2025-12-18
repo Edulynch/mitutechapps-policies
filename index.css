@@ -72,7 +72,7 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     border: 2px solid transparent;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .menu-item:hover {
@@ -94,6 +94,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    border-radius: 12px;
 }
 
 .menu-item:hover img {
@@ -113,9 +114,9 @@ body {
 /* Tooltip con el nombre de la app */
 .menu-tooltip {
     position: absolute;
-    left: calc(100% + 12px);
+    left: calc(100% + 16px);
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0.9);
     background: rgba(30, 30, 30, 0.95);
     color: #ffffff;
     padding: 8px 14px;
@@ -124,15 +125,17 @@ body {
     font-weight: 600;
     white-space: nowrap;
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 10;
+    pointer-events: none;
 }
 
 .menu-item:hover .menu-tooltip {
     opacity: 1;
-    transform: translateY(-50%) translateX(4px);
+    visibility: visible;
+    transform: translateY(-50%) translateX(0) scale(1);
 }
 
 /* Responsive: ocultar menú en pantallas pequeñas */
@@ -176,7 +179,7 @@ header p {
     box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
     border: 1px solid var(--border-soft);
     margin-bottom: 32px;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 20px;
 }
 
 /* HEADER DE LA APP */
